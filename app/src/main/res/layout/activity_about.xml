@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAECF8"
+    tools:context=".Contact">
+    <ImageView
+        android:id="@+id/imgLogoLeft"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:src="@drawable/logo"></ImageView>
+
+    <TextView
+        android:id="@+id/orderTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        android:text="About Us"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="200dp"
+        android:text="We are Kitchener based company. Serving the foodies to get what they crave for instantly. All the restaurants in the area are not just one click away from you."
+        android:textColor="@color/blue"
+        android:textSize="24sp" />
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="350dp"
+        android:text="Back to home"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</RelativeLayout>

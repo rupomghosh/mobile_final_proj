@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Contact extends AppCompatActivity implements View.OnClickListener{
+    Button homeBtn;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);
@@ -46,10 +49,20 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact);
+        homeBtn=findViewById(R.id.homeBtn);
+        homeBtn.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.homeBtn:
+                Intent send=new Intent(this,MainActivity.class);
+                startActivity(send);
+        }
     }
 }
