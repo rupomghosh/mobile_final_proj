@@ -23,10 +23,16 @@ public class Contact extends AppCompatActivity implements View.OnClickListener{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.feedbackMenu:
-                Toast.makeText(this, "Feed", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),FeedbackActivity.class);
+                        startActivity(i);
+                    }
+                },3000);
                 return true;
             case R.id.restaurantsMenu:
-                Toast.makeText(this, "Res", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Feed", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.aboutMenu:
                 new Handler().postDelayed(new Runnable() {
