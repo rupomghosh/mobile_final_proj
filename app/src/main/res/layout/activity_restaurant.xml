@@ -1,9 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_View"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestaurantActivity">
+    android:padding="20dp">
+    <!--    <HorizontalScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="6">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="Restaurant"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/rest1logo"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/rest1">
+
+        </ImageView>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_columnSpan="2"
+            android:text="Pizza Store 1"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"/>
+
+
+        <ImageView
+            android:id="@+id/rest2logo"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/rest1">
+        </ImageView>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:text="Pizza Store 2"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+
+        <ImageView
+            android:id="@+id/rest3logo"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/rest1"/>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_columnSpan="2"
+            android:text="Pizza Store 3"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+
+            android:background="@color/blue"
+            android:text="Back to home"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </GridLayout>
+    <!--    </HorizontalScrollView>-->
+</ScrollView>

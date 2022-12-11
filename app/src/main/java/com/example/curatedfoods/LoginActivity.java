@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                     if (userName.equalsIgnoreCase("admin") && password.equalsIgnoreCase("test123")) {
                         Toast.makeText(this, "Welcome!!", Toast.LENGTH_LONG).show();
-                        Intent send = new Intent(this, MainActivity.class);
+                        Intent send = new Intent(this, RestaurantActivity.class);
                         startActivity(send);
                     }
                 }
