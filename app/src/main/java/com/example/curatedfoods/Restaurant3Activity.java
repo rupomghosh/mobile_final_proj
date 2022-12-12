@@ -7,15 +7,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 
-public class RestaurantActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageView btnRest1,btnRest2,btnRest3;
+public class Restaurant3Activity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);
         return true;
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -62,51 +60,6 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurant);
-        btnRest1=(ImageView) findViewById(R.id.btnRest1);
-        btnRest2=(ImageView) findViewById(R.id.btnRest2);
-        btnRest3=(ImageView) findViewById(R.id.btnRest3);
-
-        btnRest1.setOnClickListener(this);
-        btnRest2.setOnClickListener(this);
-        btnRest3.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.btnRest1:
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i=new Intent(getApplicationContext(),Restaurant1Activity.class);
-                        startActivity(i);
-                    }
-                },3000);
-
-                break;
-            case R.id.btnRest2:
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i=new Intent(getApplicationContext(),Restaurant2Activity.class);
-                        startActivity(i);
-                    }
-                },3000);
-
-                break;
-            case R.id.btnRest3:
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i=new Intent(getApplicationContext(),Restaurant3Activity.class);
-                        startActivity(i);
-                    }
-                },3000);
-
-                break;
-        }
+        setContentView(R.layout.activity_restaurant3);
     }
 }

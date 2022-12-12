@@ -32,7 +32,13 @@ public class Contact extends AppCompatActivity implements View.OnClickListener{
                 },3000);
                 return true;
             case R.id.restaurantsMenu:
-                Toast.makeText(this, "Feed", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),RestaurantActivity.class);
+                        startActivity(i);
+                    }
+                },3000);
                 return true;
             case R.id.aboutMenu:
                 new Handler().postDelayed(new Runnable() {
