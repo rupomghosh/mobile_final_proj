@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-public class Restaurant1Activity extends AppCompatActivity {
+public class Restaurant1Activity extends AppCompatActivity implements View.OnClickListener {
+    Button btnPizza, btnWings, btnCheese, btnPanzerotti;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);
@@ -61,5 +65,33 @@ public class Restaurant1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant1);
+        btnPanzerotti =  findViewById(R.id.btnPanzerotti);
+        btnWings = findViewById(R.id.btnWings);
+        btnCheese = findViewById(R.id.btnCheese);
+        btnPizza = findViewById(R.id.btnPizza);
+
+        btnPanzerotti.setOnClickListener(this);
+        btnCheese.setOnClickListener(this);
+        btnWings.setOnClickListener(this);
+        btnPizza.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        DBHelper dbHelper = new DBHelper(this);
+
+        switch (view.getId())
+        {
+            case R.id.btnPizza:
+                dbHelper.addItem("Pizza", 25.99);
+                Toast.makeText(this, "Pizza Added to Cart", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btnWings:
+                break;
+            case R.id.btnCheese:
+                break;
+            case R.id.btnPanzerotti:
+                break;
+        }
     }
 }
