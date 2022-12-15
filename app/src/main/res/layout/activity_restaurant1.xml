@@ -6,21 +6,35 @@
     android:layout_height="match_parent"
     android:background="#EAECF8"
     android:padding="20dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/testEDT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:paddingBottom="10px"-->
+<!--            android:text="Top Notch Pizza"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/blue"-->
+<!--            android:textSize="25sp" />-->
+
+        <Button
+            android:id="@+id/btnCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Top Notch Pizza"
-            android:textAlignment="center"
-            android:textColor="@color/blue"
-            android:textSize="25sp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_marginLeft="100dp"
-            android:paddingBottom="10px"
-            />
+            android:layout_alignParentRight="true"
+            android:text="CART" />
+
         <ImageView
             android:id="@+id/rest1logo"
             android:layout_width="120dp"

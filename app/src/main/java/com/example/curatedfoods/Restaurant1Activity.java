@@ -9,10 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Restaurant1Activity extends AppCompatActivity implements View.OnClickListener {
-    Button btnPizza, btnWings, btnCheese, btnPanzerotti;
+    Button btnPizza, btnWings, btnCheese, btnPanzerotti, btnCart;
+    TextView testEDT;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);
@@ -69,11 +72,14 @@ public class Restaurant1Activity extends AppCompatActivity implements View.OnCli
         btnWings = findViewById(R.id.btnWings);
         btnCheese = findViewById(R.id.btnCheese);
         btnPizza = findViewById(R.id.btnPizza);
+        testEDT = findViewById(R.id.testEDT);
+        btnCart = findViewById(R.id.btnCart);
 
         btnPanzerotti.setOnClickListener(this);
         btnCheese.setOnClickListener(this);
         btnWings.setOnClickListener(this);
         btnPizza.setOnClickListener(this);
+        btnCart.setOnClickListener(this);
     }
 
     @Override
@@ -83,14 +89,33 @@ public class Restaurant1Activity extends AppCompatActivity implements View.OnCli
         switch (view.getId())
         {
             case R.id.btnPizza:
-                dbHelper.addItem("Pizza", 25.99);
-                Toast.makeText(this, "Pizza Added to Cart", Toast.LENGTH_SHORT).show();
+                 dbHelper.addItem("Pizza", 25.99);
+                Toast.makeText(this, "Pizza Added", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnWings:
+                dbHelper.addItem("Wings", 14.99);
+                Toast.makeText(this, "Wings Added", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnCheese:
+                dbHelper.addItem("Garlic Cheese", 9.99);
+//                testEDT.setText(dbHelper.deleteItem("Pizza"));
+                //dbHelper.displayItems();
+                Toast.makeText(this, "Garlic Cheese Added", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnPanzerotti:
+                dbHelper.addItem("Panzerotti", 9.99);
+//                testEDT.setText(dbHelper.deleteItem("Pizza"));
+                //dbHelper.displayItems();
+                Toast.makeText(this, "Panzerottie Added", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btnCart:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),Cart.class);
+                        startActivity(i);
+                    }
+                },3000);
                 break;
         }
     }

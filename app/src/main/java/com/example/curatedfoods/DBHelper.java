@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public String displayItems(){
         SQLiteDatabase db = this.getReadableDatabase();
         String data= "";
-        Cursor cr = db.rawQuery("SELECT * FROM " + TB_NAME, null);
+        Cursor cr = db.rawQuery("SELECT stdItem, stdAmount, COUNT(stdItem) FROM " + TB_NAME + " GROUP BY stdItem, stdAmount", null);
         cr.moveToFirst();
         if(cr != null && cr.getCount() > 0){
             do{
@@ -72,5 +72,13 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         db.close();
         return data;
+    }
+
+    public String deleteItem(String item){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TB_NAME+ " WHERE rowid in (SELECT rowid  FROM " + TB_NAME+ " WHERE " + ITEM_CL  + " ='Pizza'  LIMIT 1 )";
+        db.execSQL(query);
+        db.close();
+        return "Deleted";
     }
 }
