@@ -83,4 +83,22 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return "Deleted";
     }
+
+    public String getCartTotal(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Double amount= 0.0;
+        Cursor cr = db.rawQuery("SELECT SUM(" + AMOUNT_CL +  ") FROM " + TB_NAME, null);
+        cr.moveToFirst();
+        String data = cr.getString(0);
+        db.close();
+        return data;
+    }
+
+    public String clearCart(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TB_NAME;
+        db.execSQL(query);
+        db.close();
+        return "No data found";
+    }
 }

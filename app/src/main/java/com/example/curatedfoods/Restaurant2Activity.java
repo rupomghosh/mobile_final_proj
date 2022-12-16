@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Restaurant2Activity extends AppCompatActivity implements View.OnClickListener {
-    Button btnBurger, btnCroissant, btnEggs;
+    Button btnBurger, btnCroissant, btnEggs, btnSalad;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,12 +69,14 @@ public class Restaurant2Activity extends AppCompatActivity implements View.OnCli
         btnBurger = findViewById(R.id.btnBurger);
         btnCroissant = findViewById(R.id.btnCroissant);
         btnEggs = findViewById(R.id.btnEggs);
+        btnSalad = findViewById(R.id.btnSalad);
 
 
 
         btnBurger.setOnClickListener(this);
         btnCroissant.setOnClickListener(this);
         btnEggs.setOnClickListener(this);
+        btnSalad.setOnClickListener(this);
     }
 
 
@@ -84,26 +86,20 @@ public class Restaurant2Activity extends AppCompatActivity implements View.OnCli
 
         switch (view.getId()) {
             case R.id.btnBurger:
-                dbHelper.addItem("Burger", 25.99);
-                Toast.makeText(this, "Pizza Added", Toast.LENGTH_SHORT).show();
+                dbHelper.addItem("Burger", 9.99);
+                Toast.makeText(this, "Burger Added", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnCroissant:
                 dbHelper.addItem("Croissant", 14.99);
-                Toast.makeText(this, "Wings Added", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Croissant Added", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnEggs:
-                Toast.makeText(this, "Egg Cart", Toast.LENGTH_SHORT).show();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i=new Intent(getApplicationContext(),Cart.class);
-                        startActivity(i);
-                    }
-                },3000);
-
+                Toast.makeText(this, "Eggs", Toast.LENGTH_SHORT).show();
+                dbHelper.addItem("Eggs", 19.99);
                 break;
-            case R.id.btnPanzerotti:
-
+            case R.id.btnSalad:
+                Toast.makeText(this, "Salad", Toast.LENGTH_SHORT).show();
+                dbHelper.addItem("Salad", 15.99);
                 break;
 
         }
