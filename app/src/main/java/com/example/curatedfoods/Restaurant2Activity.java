@@ -7,8 +7,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-public class Restaurant2Activity extends AppCompatActivity {
+public class Restaurant2Activity extends AppCompatActivity implements View.OnClickListener {
+    Button btnBurger, btnCroissant, btnEggs;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);
@@ -61,5 +66,46 @@ public class Restaurant2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant2);
+        btnBurger = findViewById(R.id.btnBurger);
+        btnCroissant = findViewById(R.id.btnCroissant);
+        btnEggs = findViewById(R.id.btnEggs);
+
+
+
+        btnBurger.setOnClickListener(this);
+        btnCroissant.setOnClickListener(this);
+        btnEggs.setOnClickListener(this);
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        DBHelper dbHelper = new DBHelper(this);
+
+        switch (view.getId()) {
+            case R.id.btnBurger:
+                dbHelper.addItem("Burger", 25.99);
+                Toast.makeText(this, "Pizza Added", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btnCroissant:
+                dbHelper.addItem("Croissant", 14.99);
+                Toast.makeText(this, "Wings Added", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btnEggs:
+                Toast.makeText(this, "Egg Cart", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),Cart.class);
+                        startActivity(i);
+                    }
+                },3000);
+
+                break;
+            case R.id.btnPanzerotti:
+
+                break;
+
+        }
     }
 }
