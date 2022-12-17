@@ -58,6 +58,15 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                     }
                 },3000);
                 return true;
+            case R.id.userMenu:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),userProfile.class);
+                        startActivity(i);
+                    }
+                },3000);
+                return true;
         }
         return true;
     }
@@ -73,7 +82,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.homeBtn:
-                Intent send=new Intent(this,MainActivity.class);
+                Intent send=new Intent(this,RestaurantActivity.class);
                 startActivity(send);
         }
     }

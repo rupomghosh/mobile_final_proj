@@ -5,7 +5,7 @@
     android:id="@+id/about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAECF8"
+    android:background="@drawable/lightbg"
     tools:context=".Contact">
 
     <ImageView
@@ -41,9 +41,9 @@
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginLeft="125dp"
-        android:layout_marginTop="350dp"
-        android:background="@color/blue"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/button_login"
         android:text="Back to home"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="19sp" />
 </RelativeLayout>

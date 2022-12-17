@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAECF8"
+    android:background="@drawable/lightbg"
     tools:context=".Contact">
     <ImageView
         android:id="@+id/imgLogoLeft"
@@ -39,7 +39,7 @@
         android:layout_marginLeft="125dp"
         android:layout_marginTop="350dp"
         android:text="Back to home"
-        android:background="@color/blue"
+        android:background="@drawable/button_login"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="19sp" />
 </RelativeLayout>

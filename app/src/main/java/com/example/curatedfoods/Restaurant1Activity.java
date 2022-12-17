@@ -71,6 +71,15 @@ public class Restaurant1Activity extends AppCompatActivity implements View.OnCli
                     }
                 },3000);
                 return true;
+            case R.id.userMenu:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),userProfile.class);
+                        startActivity(i);
+                    }
+                },3000);
+                return true;
             case android.R.id.home:
                 this.finish();
                 return true;
