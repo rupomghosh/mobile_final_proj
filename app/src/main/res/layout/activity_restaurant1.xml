@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll_View"
+    android:id="@+id/restaurant_sv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAECF8"
+    android:background="@drawable/lightbg"
     android:padding="20dp">
 
     <RelativeLayout
@@ -27,13 +27,6 @@
 <!--            android:textAlignment="center"-->
 <!--            android:textColor="@color/blue"-->
 <!--            android:textSize="25sp" />-->
-
-        <Button
-            android:id="@+id/btnCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="CART" />
 
         <ImageView
             android:id="@+id/rest1logo"
@@ -63,7 +56,7 @@
             android:layout_height="100px"
             android:text="Add to Cart"
             android:padding="10px"
-            android:background="@color/blue"
+            android:background="@drawable/restaurants_button"
             android:textColor="@color/white"
             android:layout_marginTop="220dp"></Button>
         <ImageView
@@ -97,7 +90,7 @@
             android:layout_height="100px"
             android:text="Add to Cart"
             android:padding="10px"
-            android:background="@color/blue"
+            android:background="@drawable/restaurants_button"
             android:textColor="@color/white"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="220dp"></Button>
@@ -130,7 +123,7 @@
             android:layout_height="100px"
             android:text="Add to Cart"
             android:padding="10px"
-            android:background="@color/blue"
+            android:background="@drawable/restaurants_button"
             android:textColor="@color/white"
             android:layout_marginTop="440dp"></Button>
         <ImageView
@@ -164,7 +157,7 @@
             android:layout_height="100px"
             android:text="Add to Cart"
             android:padding="10px"
-            android:background="@color/blue"
+            android:background="@drawable/restaurants_button"
             android:layout_marginLeft="200dp"
             android:textColor="@color/white"
             android:layout_marginTop="440dp"></Button>

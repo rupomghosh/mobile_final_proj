@@ -1,5 +1,6 @@
 package com.example.curatedfoods;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Restaurant1Activity extends AppCompatActivity implements View.OnClickListener {
-    Button btnPizza, btnWings, btnCheese, btnPanzerotti, btnCart;
+    Button btnPizza, btnWings, btnCheese, btnPanzerotti;
     TextView testEDT;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,6 +62,18 @@ public class Restaurant1Activity extends AppCompatActivity implements View.OnCli
                     }
                 },3000);
                 return true;
+            case R.id.action_cart:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),Cart.class);
+                        startActivity(i);
+                    }
+                },3000);
+                return true;
+            case android.R.id.home:
+                this.finish();
+                return true;
         }
         return true;
     }
@@ -68,18 +81,25 @@ public class Restaurant1Activity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant1);
+
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Top Notch Pizza");
+
         btnPanzerotti =  findViewById(R.id.btnPanzerotti);
         btnWings = findViewById(R.id.btnWings);
         btnCheese = findViewById(R.id.btnCheese);
         btnPizza = findViewById(R.id.btnPizza);
         testEDT = findViewById(R.id.testEDT);
-        btnCart = findViewById(R.id.btnCart);
 
         btnPanzerotti.setOnClickListener(this);
         btnCheese.setOnClickListener(this);
         btnWings.setOnClickListener(this);
         btnPizza.setOnClickListener(this);
-        btnCart.setOnClickListener(this);
+
     }
 
     @Override
@@ -108,15 +128,7 @@ public class Restaurant1Activity extends AppCompatActivity implements View.OnCli
                 //dbHelper.displayItems();
                 Toast.makeText(this, "Panzerottie Added", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.btnCart:
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i=new Intent(getApplicationContext(),Cart.class);
-                        startActivity(i);
-                    }
-                },3000);
-                break;
+
         }
     }
 }

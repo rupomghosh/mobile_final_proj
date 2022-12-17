@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll_View"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/restaurant_sv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAECF8"
+    android:background="@drawable/lightbg"
     android:padding="20dp">
     <!--    <HorizontalScrollView-->
     <!--        android:layout_width="match_parent"-->
@@ -20,78 +21,79 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
+            android:layout_marginLeft="90dp"
+            android:fontFamily="casual"
+            android:paddingBottom="10px"
             android:text="Restaurants"
             android:textAlignment="center"
             android:textColor="@color/blue"
-            android:textSize="25sp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_marginLeft="100dp"
-            android:paddingBottom="10px"
-             />
+            android:textSize="29sp"
+            android:textStyle="bold" />
 
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/btnRest1"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:scaleType="fitXY"
             android:src="@drawable/rest1">
-
-        </ImageView>
+        </com.google.android.material.imageview.ShapeableImageView>
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-medium"
             android:text="Top Notch Pizza"
             android:textAlignment="center"
+            android:textColor="@color/design_default_color_primary"
             android:textSize="20sp"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="@color/blue"
-            android:layout_marginBottom="20dp" />
+            android:textStyle="bold|italic" />
 
-
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/btnRest2"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:scaleType="fitXY"
             android:src="@drawable/rest2">
-        </ImageView>
+        </com.google.android.material.imageview.ShapeableImageView>
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
-            android:text="Taste of Europe"
             android:layout_marginBottom="20dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@color/blue" />
+            android:text="Taste of Europe"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
 
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/btnRest3"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:scaleType="fitXY"
             android:src="@drawable/rest3"/>
+
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:layout_columnSpan="2"
-            android:text="Sushi Place"
             android:layout_marginBottom="20dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@color/blue" />
+            android:text="Sushi Place"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
         <TextView
 
             android:layout_width="wrap_content"

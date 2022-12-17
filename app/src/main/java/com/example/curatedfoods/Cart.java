@@ -23,6 +23,7 @@ public class Cart extends AppCompatActivity {
     GridLayout gridLayout;
     LinearLayout linearLayout;
     Button btnCheckout;
+    Button btnBack;
     DBHelper dbHelper = new DBHelper(this);
 
     @SuppressLint("ResourceType")
@@ -34,6 +35,8 @@ public class Cart extends AppCompatActivity {
         taxTV = new TextView(this);
         finalTotalTV = new TextView(this);
         btnCheckout = new Button(this);
+        btnBack = new Button(this);
+        btnBack.setVisibility(View.VISIBLE);
 
         UpdateCart();
 //
@@ -87,7 +90,7 @@ public class Cart extends AppCompatActivity {
 
 
 
-            if(linearLayout.getChildCount() < 3){
+            if(linearLayout.getChildCount() < 4){
                 totalTV.setId(4);
                 totalTV.setPadding(20, 50, 0, 0);
                 totalTV.setTextColor(Color.BLACK);
@@ -156,6 +159,10 @@ public class Cart extends AppCompatActivity {
 
 
     }
+     public void OnBackButtonClick(View view) {
+         Intent intent = new Intent(this, RestaurantActivity.class);
+         startActivity(intent);
+     }
 
     View.OnClickListener click = new View.OnClickListener() {
 

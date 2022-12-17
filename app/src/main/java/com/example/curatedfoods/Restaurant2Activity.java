@@ -1,5 +1,6 @@
 package com.example.curatedfoods;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -59,6 +60,18 @@ public class Restaurant2Activity extends AppCompatActivity implements View.OnCli
                     }
                 },3000);
                 return true;
+            case R.id.action_cart:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),Cart.class);
+                        startActivity(i);
+                    }
+                },3000);
+                return true;
+            case android.R.id.home:
+                this.finish();
+                return true;
         }
         return true;
     }
@@ -70,6 +83,13 @@ public class Restaurant2Activity extends AppCompatActivity implements View.OnCli
         btnCroissant = findViewById(R.id.btnCroissant);
         btnEggs = findViewById(R.id.btnEggs);
         btnSalad = findViewById(R.id.btnSalad);
+
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Taste Of Europe");
 
 
 

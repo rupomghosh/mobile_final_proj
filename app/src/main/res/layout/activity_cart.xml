@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll_View"
+    android:id="@+id/restaurant_sv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -21,6 +21,14 @@
             android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnBackButtonClick"
+            android:text="Back" />
+
         <GridLayout
             android:id="@+id/grLayout"
             android:layout_width="match_parent"

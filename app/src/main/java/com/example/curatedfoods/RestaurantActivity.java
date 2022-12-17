@@ -1,5 +1,6 @@
 package com.example.curatedfoods;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,9 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class RestaurantActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView btnRest1,btnRest2,btnRest3;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);
@@ -56,6 +59,18 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
                     }
                 },3000);
                 return true;
+            case R.id.action_cart:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i=new Intent(getApplicationContext(),Cart.class);
+                        startActivity(i);
+                    }
+                },3000);
+                return true;
+            case android.R.id.home:
+                this.finish();
+                return true;
         }
         return true;
     }
@@ -63,6 +78,15 @@ public class RestaurantActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("LogOut");
+        getSupportActionBar().setSubtitle("admin");
+
+
         btnRest1=(ImageView) findViewById(R.id.btnRest1);
         btnRest2=(ImageView) findViewById(R.id.btnRest2);
         btnRest3=(ImageView) findViewById(R.id.btnRest3);
